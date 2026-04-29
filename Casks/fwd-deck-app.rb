@@ -1,6 +1,6 @@
 cask "fwd-deck-app" do
-  version "0.1.0"
-  sha256 "8001975a651131bdf7f3df1a17ab37231065cca5926b59b49acec039b0acae24"
+  version "0.1.1"
+  sha256 "658d8e529c66bb67c80f035f90c36cff43d6251626d2c07831f6f8d569db3855"
 
   url "https://github.com/oiekjr/fwd-deck/releases/download/v#{version}/fwd-deck-app_#{version}_universal.dmg",
       verified: "github.com/oiekjr/fwd-deck/"

@@ -1,15 +1,23 @@
 class FwdDeck < Formula
   desc "Manage SSH local port forwarding profiles"
   homepage "https://github.com/oiekjr/fwd-deck"
-  version "0.1.0"
-  url "https://github.com/oiekjr/fwd-deck/archive/refs/tags/v#{version}.tar.gz"
-  sha256 "84416174d4f4c1bc6726f5bbdb0c0551a5a8fd8f2829d32e5de9092936d508a5"
+  version "0.1.1"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/oiekjr/fwd-deck/releases/download/v#{version}/fwd-deck_#{version}_aarch64-apple-darwin.tar.gz"
+      sha256 "23943dc4b0d369a8c4252769554d2df8835b108d786fe9936bbf58a2a916e8c1"
+    end
+
+    on_intel do
+      url "https://github.com/oiekjr/fwd-deck/releases/download/v#{version}/fwd-deck_#{version}_x86_64-apple-darwin.tar.gz"
+      sha256 "2b1acbd717d5bf0c0b56da762bd105454d346df63f80d2abd169630d5c0009c8"
+    end
+  end
 
   def install
-    system "cargo", "install", "--locked", "--path", "crates/fwd-deck-cli", "--root", prefix
+    bin.install "fwd-deck"
   end
 
   test do
