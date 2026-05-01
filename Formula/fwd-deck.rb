@@ -1,18 +1,18 @@
 class FwdDeck < Formula
   desc "Manage SSH local port forwarding profiles"
   homepage "https://github.com/oiekjr/fwd-deck"
-  version "0.3.8"
+  version "0.3.9"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/oiekjr/fwd-deck/releases/download/v#{version}/fwd-deck_#{version}_aarch64-apple-darwin.tar.gz"
-      sha256 "f73f73fc857cb1f2288d5609d6884b42c8b26773ca5573c08a26f89338684e2e"
+      sha256 "1682c7e786ba13db7cf839205487a5be04f4358bea88300d66e86b3fe2983174"
     end
 
     on_intel do
       url "https://github.com/oiekjr/fwd-deck/releases/download/v#{version}/fwd-deck_#{version}_x86_64-apple-darwin.tar.gz"
-      sha256 "b7aab7fe974fd0df8d37bb5e88cb245f05f87eb8c56db550b995fcca7eb97a3b"
+      sha256 "f10e2a25e5aff7ccbb3afbce9342f19d039b91d7dc8f3963f267aaa60908b4e0"
     end
   end
 
