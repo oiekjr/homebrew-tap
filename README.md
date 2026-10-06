@@ -1,5 +1,7 @@
 # Oiekjr Tap
 
+This tap provides the fwd-deck CLI and Fwd Deck app for macOS.
+
 ## How do I install these formulae?
 
 `brew install oiekjr/tap/<formula>`

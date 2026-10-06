@@ -7,6 +7,8 @@ cask "fwd-deck-app" do
   desc "GUI for fwd-deck local SSH port forwarding profiles"
   homepage "https://github.com/oiekjr/fwd-deck"
 
+  depends_on :macos
+
   app "Fwd Deck.app", target: "Fwd Deck.app"
 
   zap trash: [
