@@ -42,11 +42,15 @@ jobs:
       - run: brew test-bot --only-setup
 
       - name: Check formula and cask style
-        run: brew style Formula Casks
+        run: |
+          cd "$(brew --repository oiekjr/tap)"
+          brew style Formula Casks
 
       - name: Check GitHub Actions workflows
         if: matrix.os == 'ubuntu-latest'
-        run: brew style .github/workflows/tests.yml .github/workflows/publish.yml
+        run: |
+          cd "$(brew --repository oiekjr/tap)"
+          brew style .github/workflows/tests.yml .github/workflows/publish.yml
 
       - name: Read formulae and casks on all platforms
         run: brew readall --aliases --os=all --arch=all oiekjr/tap
