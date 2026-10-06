@@ -8,6 +8,7 @@ on:
 
 jobs:
   test-bot:
+    timeout-minutes: 20
     strategy:
       matrix:
         os: [ macos-15-intel, macos-26 ]
@@ -27,6 +28,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          core: true
 
       - name: Cache Homebrew Bundler RubyGems
         uses: actions/cache@v4
@@ -39,7 +41,7 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-tap-syntax --verbose
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
 

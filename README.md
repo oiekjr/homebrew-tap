@@ -18,3 +18,8 @@ brew "<formula>"
 ## Documentation
 
 `brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+
+## CI
+
+CI updates Homebrew/core before testing and prints definition-check output as it runs.
+Each job has a 20-minute limit to stop stalled checks.
