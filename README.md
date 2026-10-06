@@ -21,5 +21,7 @@ brew "<formula>"
 
 ## CI
 
+CI checks formulae and casks on Linux, Apple Silicon macOS, and Intel macOS.
+GitHub Actions workflow checks run on Linux to avoid installing the same workflow-checking tools in every job.
 CI updates Homebrew/core before testing and prints definition-check output as it runs.
 Each job has a 20-minute limit to stop stalled checks.
